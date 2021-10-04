@@ -1,0 +1,6 @@
+.container {
+  height: 33rem;
+  margin: 4rem 9rem 4rem 9rem;
+  background-color: #151820;
+  display: flex;
+}

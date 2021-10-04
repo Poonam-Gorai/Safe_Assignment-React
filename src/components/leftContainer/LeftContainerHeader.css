@@ -1,0 +1,14 @@
+.left-container-header{
+    width: 36rem;
+    height: 3rem;
+    background-color:#151820;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.allsafe{
+    padding: 10px 10px 10px 39px;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+}

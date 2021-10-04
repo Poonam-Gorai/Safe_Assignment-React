@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from "react-router-dom";
+
+import SalesPage from './pages/Sales/Sales';
+import IAMServiceAccountsPage from './pages/iamServiceaccounts/IAMServiceAccounts';
+import ServiceAccountsPage from './pages/serviceAccounts/ServiceAccounts';
+import VaultAppsRolesPage from './pages/vaultApps/VaultAppsRoles';
+import AzureActiveDirectoryPage from './pages/azureActiveDirectory/AzureActiveDirectory';
+import MainNavigation from './components/layout/MainNavigation';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MainNavigation />
+      <Switch>
+      <Route path="/" exact>
+        <SalesPage />
+      </Route>
+      <Route path="/AzureActiveDirectoryPage" exact>
+        <AzureActiveDirectoryPage />
+      </Route>
+      <Route path="/IAMServiceAccountsPage" exact>
+        <IAMServiceAccountsPage />
+      </Route>
+      <Route path="/ServiceAccountsPage" exact>
+        <ServiceAccountsPage />
+      </Route>
+      <Route path="/VaultAppsRolesPage" exact>
+        <VaultAppsRolesPage />
+      </Route>
+      </Switch>
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.btn {
+  width: 64px;
+  height: 64px;
+  margin: 24rem 1rem 1rem;
+  float: right;
+  border-radius: 32px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to top, #ff61b2, #e20074, #650038);
+}
+.plus {
+  color: white;
+  font-size: 40px;
+}
+.plus:hover{
+    cursor: pointer;
+}
