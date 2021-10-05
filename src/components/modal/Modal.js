@@ -39,9 +39,8 @@ function Modal(props) {
       };
 
       console.log(modalData);
+      dispatch(createSafe(modalData));
     }
-    dispatch({type:"SET_CREATE_SAFE", payload:modalData});
-    console.log(dispatch);
 
 
   return (

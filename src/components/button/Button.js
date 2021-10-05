@@ -20,7 +20,7 @@ function Button() {
 
 
   return (
-    <div>
+    <div className='btn-size'>
       <button className="btn" onClick={ModalHandler}>
         <a className="plus">+</a>
       </button>

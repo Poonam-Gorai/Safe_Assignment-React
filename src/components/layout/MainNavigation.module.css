@@ -5,6 +5,8 @@
   flex-grow: 0;
   box-shadow: 0 5px 25px 0 rgba(226, 0, 116, 0.5);
   background-color: #151820;
+  height: 4rem;
+  
 }
 
 .logo {
@@ -40,9 +42,10 @@
   color: #fff;
   font-size: 13px;
   font-weight: bold;
-  padding: 1rem .5rem;
+  padding: 1.45rem .5rem;
 }
 .header li:hover {
+    
     background-image: linear-gradient(to top, #72134b, #1d212c);
 }
 .header nav{

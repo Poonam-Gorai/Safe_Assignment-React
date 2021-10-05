@@ -1,5 +1,5 @@
 .container {
-  height: 33rem;
+  height: calc(100vh - 12rem);
   margin: 4rem 9rem 4rem 9rem;
   background-color: #151820;
   display: flex;

@@ -1,12 +1,15 @@
 import "./LeftContainer.css";
 import Button from '../button/Button';
 import LeftContainerHeader from './LeftContainerHeader';
+import { useSelector } from "react-redux";
 
 function LeftContainer() {
-    return <aside className="left-container">
+  const state  = useSelector((state) => state.createSafe.safes)
+   console.log('state',state);
+   return <div className="left-container">
       <LeftContainerHeader/>
       <Button/>
-    </aside>;
+    </div>;
   }
   
   export default LeftContainer;

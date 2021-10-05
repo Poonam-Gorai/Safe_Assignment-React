@@ -16,7 +16,6 @@ function RightContainer() {
       <div className="secrets">
         <div className="leftflex">
           <li>Secrets</li>
-          <li>Permissions</li>
         </div>
         <li className="folder"> Add Folder</li>
       </div>
