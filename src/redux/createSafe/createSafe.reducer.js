@@ -1,3 +1,4 @@
+
 const INITIAL_STATE = {
     safeData: {
         safeName: '',
@@ -8,6 +9,7 @@ const INITIAL_STATE = {
 };
 
 const createSafeReducer =  (state = INITIAL_STATE,action) =>{
+
     switch(action.type) {
         case "SET_CREATE_SAFE":
             return{

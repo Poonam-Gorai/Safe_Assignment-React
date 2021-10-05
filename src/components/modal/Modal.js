@@ -1,14 +1,15 @@
 import { useRef } from "react";//for reading the user input using reference
 import "./Modal.css";
 
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {createSafe} from '../../redux/createSafe/createSafe.action';
 
 
 function Modal(props) {
 
+  
   const dispatch = useDispatch();
-console.log(dispatch);
+
   //it is like a useState only and it preserve the value. No rerender
   const safeNameInputRef = useRef();
   const ownerInputRef = useRef();
@@ -19,6 +20,7 @@ console.log(dispatch);
         props.onCancel();
     }
 
+    let modalData;
     function submitHandler(event){
 
       event.preventDefault();//to prevent Default input 
@@ -37,9 +39,9 @@ console.log(dispatch);
       };
 
       console.log(modalData);
-      //dispatch(createSafe({modalData}));
     }
-    
+    dispatch({type:"SET_CREATE_SAFE", payload:modalData});
+    console.log(dispatch);
 
 
   return (
@@ -66,7 +68,7 @@ console.log(dispatch);
       <span className='Safename'>Please add minimum of 10 characters</span>
       </div>
       <div className='modal-btn'>
-      <button className="moda l-btn-cancle"onClick={cancleHandler} >Cancel</button>
+      <button className="modal-btn-cancle"onClick={cancleHandler} >Cancel</button>
       <button className="modal-btn-create"onClick={submitHandler} > + Create</button>
       </div>
     </div>
