@@ -1,7 +1,7 @@
 import { useRef } from "react";//for reading the user input using reference
 import "./Modal.css";
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {createSafe} from '../../redux/createSafe/createSafe.action';
 
 
@@ -20,7 +20,6 @@ function Modal(props) {
         props.onCancel();
     }
 
-    let modalData;
     function submitHandler(event){
 
       event.preventDefault();//to prevent Default input 
@@ -36,10 +35,13 @@ function Modal(props) {
         owner:  enteredOwner,
         type: enteredType,
         description: enteredDescription,
+        secrets:[]
       };
 
       console.log(modalData);
+
       dispatch(createSafe(modalData));
+      cancleHandler();
     }
 
 

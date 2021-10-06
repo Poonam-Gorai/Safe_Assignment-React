@@ -1,0 +1,7 @@
+.CreateNewSafe{
+    margin: 1rem 0;
+    color: aliceblue;
+    }
+  .CreateNewSafe:hover{
+    background-image: linear-gradient(to right, #72134b, #1d212c);
+  }

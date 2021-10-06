@@ -1,12 +1,10 @@
 .header {
   display: flex;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 8rem;
   flex-grow: 0;
   box-shadow: 0 5px 25px 0 rgba(226, 0, 116, 0.5);
   background-color: #151820;
-  height: 4rem;
-  
 }
 
 .logo {
@@ -18,31 +16,23 @@
 
 .header ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  align-items: baseline;
 }
 
 .header a{
   text-decoration: none;
-  flex-grow: 0;
   font-family: Helvetica;
   font-size: 13px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  text-align: center;
   color: #fff;
-  padding: .5rem;
 }
 
 .header li{
-  text-decoration: none;
   color: #fff;
   font-size: 13px;
   font-weight: bold;
-  padding: 1.45rem .5rem;
+  padding: 1.45rem 1rem;
+  text-align: center;
 }
 .header li:hover {
     
@@ -50,4 +40,6 @@
 }
 .header nav{
     display: flex;
+    width: 100%;
+    justify-content: space-between;
 }

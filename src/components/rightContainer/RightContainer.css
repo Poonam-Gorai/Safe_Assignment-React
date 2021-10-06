@@ -26,6 +26,10 @@
   text-align: left;
   color: #c4c4c4;
 }
+.secret-content{
+  margin: 0 1rem;
+  position: relative;
+}
 .secrets {
   display: flex;
   justify-content: space-between;
@@ -37,32 +41,31 @@
   padding: 10px 30px;
   display: flex;
 }
-.leftflex {
-  display: flex;
-}
 .line {
-  width: 45rem;
   height: 3px;
   background-color: #222632;
-  margin: 0rem 0rem 0rem 1rem;
 }
 .image2{
   width: 8rem;
   height: 8rem;
-  margin: 3rem 19rem 0 19rem;
+  margin: 1rem 1rem 2rem 6rem;
+}
+.img-content{
+  position: absolute;
+  top: 4rem;
+  display: flex;
+  flex-direction: column;
+  left: 15rem;
 }
 .secrets li:hover {
 cursor: pointer;
 background-image: linear-gradient(to top, #72134b, #1d212c);
 }
 .right-content {
-  margin: 0 0 0 10rem ;
-  width: 295px;
-  height: 36px;
   font-family: Helvetica;
   font-size: 14px;
   color: rgb(110, 73, 105);
-  align-items: center;
+  
 }
 
 .right-content .text-style-2 {

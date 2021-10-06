@@ -1,5 +1,9 @@
+.main-content{
+  height: calc(100vh-4rem);
+  background-color: #1d212c;
+}
 .container {
-  height: calc(100vh - 12rem);
+  height: 32rem;
   margin: 4rem 9rem 4rem 9rem;
   background-color: #151820;
   display: flex;

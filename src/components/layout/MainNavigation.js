@@ -4,7 +4,7 @@ import classes from "./MainNavigation.module.css";
 function MainNavigation() {
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>T-VAULT</div>
+      <div className={classes.logo}>T_VAULT</div>
       <nav>
         <ul>
           <li>
@@ -23,7 +23,7 @@ function MainNavigation() {
             <Link to="/AzureActiveDirectoryPage">Azure Active Directory</Link>
           </li>
         </ul>
-        <ul className={classes.right} style={{ "padding-left": "11.5rem" }}>
+        <ul className='right'>
           <li>Documentation</li>
           <li>(Admin) Davis R.</li>
         </ul>
