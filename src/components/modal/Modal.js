@@ -46,7 +46,7 @@ function Modal(props) {
 
 
   return (
-    <div className="modal" >
+    <form className="modal" >
       <p className="create">Create Safe</p>
       <div className="modal-img">
         <img src="./assets/icon.png" className="icon"></img>
@@ -59,20 +59,20 @@ function Modal(props) {
       </div>
       <div className='input-content'>
       <span className='Safename' htmlFor='safename'>Safe Name</span>
-      <input type="text" placeholder="Safe Name" id='safename'className="Safe" ref={safeNameInputRef}></input>
+      <input type="text" placeholder="Safe Name" id='safename'className="Safe" ref={safeNameInputRef} autoComplete='off' required></input>
       <span className='Safename' htmlFor='owner'>Owner</span>
-      <input type="text" placeholder="Owner"id='owner' className="Safe" ref={ownerInputRef}></input>
+      <input type="text" placeholder="Owner"id='owner' className="Safe" ref={ownerInputRef} autoComplete='off' required></input>
       <span className='Safename'htmlFor='type'>Type</span>
-      <input type="text" placeholder="Type" id='type'className="Safe" ref={typeInputRef}></input>
+      <input type="text" placeholder="Type" id='type'className="Safe" ref={typeInputRef} autoComplete='off' required></input>
       <span className='Safename'htmlFor='description'>Description</span>
-      <textarea placeholder="Description"id='description' className="Safe" rows='2' ref={descriptionInputRef}></textarea>
+      <textarea placeholder="Description"id='description' className="Safe" rows='2' ref={descriptionInputRef} required></textarea>
       <span className='Safename'>Please add minimum of 10 characters</span>
       </div>
       <div className='modal-btn'>
       <button className="modal-btn-cancle"onClick={cancleHandler} >Cancel</button>
       <button className="modal-btn-create"onClick={submitHandler} > + Create</button>
       </div>
-    </div>
+    </form>
   );
 }
 

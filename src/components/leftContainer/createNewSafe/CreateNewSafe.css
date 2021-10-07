@@ -1,6 +1,10 @@
 .CreateNewSafe{
     margin: 1rem 0;
     color: aliceblue;
+    padding: 3rem;
+    background-image: url('../../../assets/icon.png');
+    background-repeat: no-repeat;
+    height: 1rem;
     }
   .CreateNewSafe:hover{
     background-image: linear-gradient(to right, #72134b, #1d212c);

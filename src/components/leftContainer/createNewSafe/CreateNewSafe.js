@@ -1,27 +1,33 @@
 import "./CreateNewSafe.css";
 import { useSelector } from "react-redux";
-import React, { useState } from "react";
+import React from "react";
 
-function CreateNewSafe() {
+function CreateNewSafe({ setAddButtonDisable, setSelectedSafe }) {
   const safeList = useSelector((state) => state.createSafe.safes);
-  console.log("state", safeList);
 
-  //const [safeList, setSafeList] = useState([...state]);
-  //console.log(safeList);
+  const handelClick = (safe) => {
+    setSelectedSafe(safe);
+    setAddButtonDisable((prevState) => !prevState);
+  };
 
-  const renderSafes = (item) => {
-    return (
-        <div>{item.safename}</div>
-        
-    )
-  }
-
-  return <div className="CreateNewSafe">
-      {/* {safeList.length && (
-        <div>{" "}</div>
-      )} */}
-      {safeList.length > 0 && safeList.map(renderSafes)}
-  </div>
+  return (
+    <>
+      {safeList.length > 0 &&
+        safeList.map((safe, index) => {
+          return (
+            <div
+              key={index}
+              className="CreateNewSafe"
+              onClick={() => {
+                handelClick(safe);
+              }}
+            >
+              {safe.safename}
+            </div>
+          );
+        })}
+    </>
+  );
 }
 
 export default CreateNewSafe;

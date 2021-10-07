@@ -1,0 +1,55 @@
+.modal {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    background-color: #2a2e3e;
+    padding: 3rem;
+    text-align: center;
+    width: 50rem;
+    z-index: 10;
+    position: fixed;
+    top: 30vh;
+    left: calc(35% - 10rem);
+    bottom: 30vh;
+  }
+  .input-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .Safename {
+    text-align: left;
+    font-size: 13px;
+    color: white;
+    margin: 0.5rem 0 0 0.5rem;
+  }
+  .Safe {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    text-decoration: none;
+  }
+  .modal-btn-cancle {
+    color: deeppink;
+    align-items: center;
+    margin: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: white;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal-btn-create {
+    color: white;
+    align-items: center;
+    margin: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: deeppink;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal-btn {
+    display: flex;
+    justify-content: flex-end;
+  }

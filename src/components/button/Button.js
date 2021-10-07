@@ -1,6 +1,4 @@
 import { useState } from "react";
-//use history hook will help the page to go back. 
-import { useHistory } from "react-router-dom";
 import Backdrop from '../backdrop/Backdrop';
 import Modal from '../modal/Modal';
 import "./Button.css";
