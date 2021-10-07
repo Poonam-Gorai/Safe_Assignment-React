@@ -38,7 +38,7 @@ function Modal(props) {
         secrets:[]
       };
 
-      console.log(modalData);
+      //console.log(modalData);
 
       dispatch(createSafe(modalData));
       cancleHandler();
