@@ -1,24 +1,32 @@
 import React from "react";
 import "./RightContainer.css";
 import AddFolder from "../modal/AddFolder";
+import RightCard from './rightCard/rightCard';
 
 function RightContainer({
-  AddButtonDisable,
-  setAddButtonDisable,
+ // AddButtonDisable,
+ // setAddButtonDisable,
   selectedSafe,
   setSelectedSafe,
 }) {
   const [showAddFolder, setshowAddFolder] = React.useState(false);
+  const [name, setName] = React.useState("");
 
+  
+
+  const handleSetName = (add) => {
+    setName(add);
+  };
   const handelClick = () => {
     setshowAddFolder((prev) => !prev);
-    setAddButtonDisable((prevState) => !prevState);
+    //setAddButtonDisable((prevState) => !prevState);
   };
-
   return (
     <>
       {showAddFolder === true && (
         <AddFolder
+          handleSetName={handleSetName}
+          name={name}
           selectedSafe={selectedSafe}
           setSelectedSafe={setSelectedSafe}
           setshowAddFolder={setshowAddFolder}
@@ -42,6 +50,8 @@ function RightContainer({
             <li> Add Folder</li>
           </ul>
           <div className="line"></div>
+          {/* <div className="right-card">{name}</div> */}
+          <RightCard name={name}/>
           <div className="img-content">
             <img
               src="./assets/Group.png"
@@ -56,7 +66,8 @@ function RightContainer({
               and cannot view it’s contents
             </p>
             <button
-              disabled={AddButtonDisable}
+              //enabled={AddButtonDisable}
+              
               onClick={() => handelClick()}
               className="addButton"
             >

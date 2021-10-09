@@ -1,13 +1,13 @@
 import React from "react";
 
-const AddFolder = ({ setshowAddFolder, selectedSafe, setSelectedSafe }) => {
-  const [name, setName] = React.useState("");
+const AddFolder = ({ setshowAddFolder,name,handleSetName }) => {
+  
 
   const closeAddForm = () => {
     setshowAddFolder((prev) => !prev);
   };
   const saveForm = () => {
-    console.log(name, selectedSafe);
+    console.log(name);
     setshowAddFolder((prev) => !prev);
   };
 
@@ -23,7 +23,7 @@ const AddFolder = ({ setshowAddFolder, selectedSafe, setSelectedSafe }) => {
           id="safename"
           className="Safe"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => handleSetName(e.target.value)}
         ></input>
         <div className="modal-btn">
           <button className="modal-btn-cancle" onClick={closeAddForm}>

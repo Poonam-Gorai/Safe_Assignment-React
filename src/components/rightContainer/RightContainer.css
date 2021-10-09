@@ -78,10 +78,15 @@ background-image: linear-gradient(to top, #72134b, #1d212c);
 .addButton{
   width: 5rem;
   padding: .5rem;
-  background-color: pink;
+  background-color: deeppink;
   color: #fff;
   margin: 1rem;
 }
-.addButton :enabled{
-  background-color: deeppink;
-}
+
+
+.right-card{
+  color: ghostwhite;
+  padding: 1rem;
+  font-family: Roboto;
+  font-size: 16px;
+  }

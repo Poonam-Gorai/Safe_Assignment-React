@@ -8,6 +8,11 @@ import AzureActiveDirectoryPage from './pages/azureActiveDirectory/AzureActiveDi
 import MainNavigation from './components/layout/MainNavigation';
 
 function App() {
+
+//delete task
+const deleteTask =(id) => {
+
+}
   return (
     <div>
       <MainNavigation />

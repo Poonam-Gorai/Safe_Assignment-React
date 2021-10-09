@@ -1,0 +1,10 @@
+.card{
+    display: flex;
+    align-items: center;
+    border-bottom: #2a2e3e solid 1px;
+    }
+ 
+  .card-details{
+    color: ghostwhite;
+    padding: 1rem;
+  }
