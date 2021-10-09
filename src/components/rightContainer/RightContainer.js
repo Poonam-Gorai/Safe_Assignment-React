@@ -1,19 +1,27 @@
 import React from "react";
 import "./RightContainer.css";
 import AddFolder from "../modal/AddFolder";
-import RightCard from './rightCard/rightCard';
+import RightCard from "./rightCard/rightCard";
+import { useSelector } from "react-redux";
 
 function RightContainer({
- // AddButtonDisable,
- // setAddButtonDisable,
+  // AddButtonDisable,
+  // setAddButtonDisable,
   selectedSafe,
   setSelectedSafe,
 }) {
   const [showAddFolder, setshowAddFolder] = React.useState(false);
   const [name, setName] = React.useState("");
-
-  
-
+  const safeList = useSelector((state) => state.createSafe.safes);
+  // //const secrets = safeList[0].secrets;
+  // console.log("SafeList Right", safeList[0])
+  let secrets;
+  if (safeList.length === 0){
+    secrets=[]
+  }
+  else{
+  secrets = safeList[0].secrets;
+  }
   const handleSetName = (add) => {
     setName(add);
   };
@@ -51,7 +59,11 @@ function RightContainer({
           </ul>
           <div className="line"></div>
           {/* <div className="right-card">{name}</div> */}
-          <RightCard name={name}/>
+          {secrets.map((secret, index) => {
+            return (
+                <RightCard name={secret} key={index} />
+            );
+          })}
           <div className="img-content">
             <img
               src="./assets/Group.png"
@@ -67,7 +79,7 @@ function RightContainer({
             </p>
             <button
               //enabled={AddButtonDisable}
-              
+
               onClick={() => handelClick()}
               className="addButton"
             >

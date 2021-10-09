@@ -1,14 +1,22 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const AddFolder = ({ setshowAddFolder,name,handleSetName }) => {
-  
+
+  const safeList = useSelector((state) => state.createSafe.safes);
+  const secrets = safeList[0].secrets;
+  //console.log("StfeList",safeList[0].secrets);
+
 
   const closeAddForm = () => {
     setshowAddFolder((prev) => !prev);
+    //handleSetName(" ");
   };
   const saveForm = () => {
-    console.log(name);
+    console.log("str",name);
     setshowAddFolder((prev) => !prev);
+    secrets.push(name)
+    handleSetName(" ");
   };
 
   return (
