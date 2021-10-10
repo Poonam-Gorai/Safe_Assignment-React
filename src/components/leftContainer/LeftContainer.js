@@ -4,7 +4,7 @@ import LeftContainerHeader from "./LeftContainerHeader";
 
 import CreateNewSafe from "./createNewSafe/CreateNewSafe";
 
-function LeftContainer({ setAddButtonDisable, setSelectedSafe }) {
+function LeftContainer({ setAddButtonDisable, setSelectedSafe,setcurrentIndex }) {
   return (
     <div className="left-container">
       <LeftContainerHeader />
@@ -12,6 +12,7 @@ function LeftContainer({ setAddButtonDisable, setSelectedSafe }) {
         <CreateNewSafe
           setAddButtonDisable={setAddButtonDisable}
           setSelectedSafe={setSelectedSafe}
+          setcurrentIndex={setcurrentIndex}
         />
       </div>
       <Button />

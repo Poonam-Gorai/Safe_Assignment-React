@@ -2,11 +2,14 @@ import React from "react";
 import LeftContainer from "../leftContainer/LeftContainer";
 import RightContainer from "../rightContainer/RightContainer";
 import "./SalesContainer.css";
+import { useState } from "react";
 import {useSelector} from 'react-redux'
 
 function SalesContainer() {
-  const [AddButtonDisable, setAddButtonDisable] = React.useState(true);
-  const [selectedSafe, setSelectedSafe] = React.useState({});
+  const [AddButtonDisable, setAddButtonDisable] = useState(true);
+  const [selectedSafe, setSelectedSafe] = useState({});
+  const [currentIndex, setcurrentIndex] = useState(0)
+
   // const safeList = useSelector((state) => state.createSafe.safes);
   // console.log("StfeList",safeList[0].secrets);
 
@@ -16,12 +19,14 @@ function SalesContainer() {
         <LeftContainer
           setAddButtonDisable={setAddButtonDisable}
           setSelectedSafe={setSelectedSafe}
+          setcurrentIndex={setcurrentIndex}
         />
         <RightContainer
           AddButtonDisable={AddButtonDisable}
           setAddButtonDisable={setAddButtonDisable}
           selectedSafe={selectedSafe}
           setSelectedSafe={setSelectedSafe}
+          currentIndex={currentIndex}
         />
       </div>
     </div>

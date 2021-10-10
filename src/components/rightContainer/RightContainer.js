@@ -5,34 +5,36 @@ import RightCard from "./rightCard/rightCard";
 import { useSelector } from "react-redux";
 
 function RightContainer({
-  // AddButtonDisable,
-  // setAddButtonDisable,
+  AddButtonDisable,
+  setAddButtonDisable,
   selectedSafe,
   setSelectedSafe,
+  currentIndex,
 }) {
   const [showAddFolder, setshowAddFolder] = React.useState(false);
   const [name, setName] = React.useState("");
   const safeList = useSelector((state) => state.createSafe.safes);
-  // //const secrets = safeList[0].secrets;
-  // console.log("SafeList Right", safeList[0])
+
   let secrets;
   if (safeList.length === 0){
     secrets=[]
   }
   else{
-  secrets = safeList[0].secrets;
+  secrets = safeList[currentIndex].secrets;
   }
+  
   const handleSetName = (add) => {
     setName(add);
   };
   const handelClick = () => {
     setshowAddFolder((prev) => !prev);
-    //setAddButtonDisable((prevState) => !prevState);
+    setAddButtonDisable((prevState) => !prevState);
   };
   return (
     <>
       {showAddFolder === true && (
         <AddFolder
+          currentIndex={currentIndex}
           handleSetName={handleSetName}
           name={name}
           selectedSafe={selectedSafe}
@@ -61,7 +63,7 @@ function RightContainer({
           {/* <div className="right-card">{name}</div> */}
           {secrets.map((secret, index) => {
             return (
-                <RightCard name={secret} key={index} />
+            <RightCard name={secret} key={index} />
             );
           })}
           <div className="img-content">
@@ -77,9 +79,8 @@ function RightContainer({
               <span className="text-style-2"> Safe </span>
               and cannot view it’s contents
             </p>
-            <button
-              //enabled={AddButtonDisable}
-
+            <button 
+              disabled={AddButtonDisable}
               onClick={() => handelClick()}
               className="addButton"
             >
