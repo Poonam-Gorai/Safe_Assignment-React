@@ -1,4 +1,5 @@
 import React from "react";
+import './AddFolder.css';
 import { useSelector } from "react-redux";
 
 const AddFolder = ({ setshowAddFolder,name,handleSetName,currentIndex }) => {
@@ -20,8 +21,8 @@ const AddFolder = ({ setshowAddFolder,name,handleSetName,currentIndex }) => {
   };
 
   return (
-    <div className="modal">
-      <div className="input-content">
+    <div className="addFolder">
+      <div className="addFolder-content">
         <span className="Safename" htmlFor="safename">
           Add Folder
         </span>
@@ -33,11 +34,11 @@ const AddFolder = ({ setshowAddFolder,name,handleSetName,currentIndex }) => {
           value={name}
           onChange={(e) => handleSetName(e.target.value)}
         ></input>
-        <div className="modal-btn">
-          <button className="modal-btn-cancle" onClick={closeAddForm}>
+        <div className="addFolder-btn">
+          <button className="addFolder-btn-cancle" onClick={closeAddForm}>
             Cancel
           </button>
-          <button className="modal-btn-create" onClick={saveForm}>
+          <button className="addFolder-btn-create" onClick={saveForm}>
             Save
           </button>
         </div>

@@ -21,7 +21,7 @@ function Button() {
     <div className='btn-size'>
       
       <button className="btn" onClick={ModalHandler}>
-        <a className="plus">+</a>
+        <span className="plus">+</span>
       </button>
       {modalIsOpen && (
         <Modal

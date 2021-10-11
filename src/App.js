@@ -1,5 +1,5 @@
 import { Route, Switch } from "react-router-dom";
-
+import React from "react";
 import SalesPage from './pages/Sales/Sales';
 import IAMServiceAccountsPage from './pages/iamServiceaccounts/IAMServiceAccounts';
 import ServiceAccountsPage from './pages/serviceAccounts/ServiceAccounts';
@@ -9,10 +9,6 @@ import MainNavigation from './components/layout/MainNavigation';
 
 function App() {
 
-//delete task
-const deleteTask =(id) => {
-
-}
   return (
     <div>
       <MainNavigation />

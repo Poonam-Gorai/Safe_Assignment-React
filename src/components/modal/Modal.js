@@ -1,6 +1,7 @@
 import { useRef } from "react";//for reading the user input using reference
 import "./Modal.css";
 
+import {toast} from "react-toastify";
 import { useDispatch } from 'react-redux';
 import {createSafe} from '../../redux/createSafe/createSafe.action';
 
@@ -30,6 +31,10 @@ function Modal(props) {
       const enteredType = typeInputRef.current.value;
       const enteredDescription = descriptionInputRef.current.value;
 
+      if (!enteredSafeName || !enteredOwner || !enteredType || !enteredDescription){
+        return alert("Please fill in all the fileds!")
+        //return toast.warn("Please fill in all the fileds!");
+      }
       const modalData = {
         safename: enteredSafeName,
         owner:  enteredOwner,
@@ -37,7 +42,6 @@ function Modal(props) {
         description: enteredDescription,
         secrets:[]
       };
-
       //console.log(modalData);
 
       dispatch(createSafe(modalData));

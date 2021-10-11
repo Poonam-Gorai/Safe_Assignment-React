@@ -3,7 +3,7 @@ import LeftContainer from "../leftContainer/LeftContainer";
 import RightContainer from "../rightContainer/RightContainer";
 import "./SalesContainer.css";
 import { useState } from "react";
-import {useSelector} from 'react-redux'
+
 
 function SalesContainer() {
   const [AddButtonDisable, setAddButtonDisable] = useState(true);

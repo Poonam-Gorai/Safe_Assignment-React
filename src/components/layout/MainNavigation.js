@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
+import logo from '../../assets/logo.svg';
 
 function MainNavigation() {
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>T_VAULT</div>
+      <img src={logo} alt="logo"></img>
       <nav>
         <ul>
           <li>
             <Link to="/">Safes</Link>
           </li>
           <li>
-            <Link to="/VaultAppsRolesPage">Vault Apps Roles</Link>
+            <Link to="/VaultAppsRolesPage?queryname=this is a test&age=10">Vault Apps Roles</Link>
           </li>
           <li>
             <Link to="/ServiceAccountsPage">Service Accounts</Link>

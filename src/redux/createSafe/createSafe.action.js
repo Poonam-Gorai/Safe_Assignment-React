@@ -8,8 +8,12 @@ export const deleteItem = (index) => ({
             payload: index,
     });
 
-    export const EditItem = (safeDetails) => ({
+    export const EditItem = (safeDetails,index) => 
+    {
+        console.log("Edit item",safeDetails,index);
+        return{
         type: "EDIT_ITEM",
-         payload: safeDetails,
- });
+         payload: {safeDetails,index}
+        };
+ };
 

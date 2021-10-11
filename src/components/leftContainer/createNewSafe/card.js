@@ -4,18 +4,14 @@ import Backdrop from '../../backdrop/Backdrop';
 import EditModel from "../../modal/EditModel";
 import deleteImage from "../../../assets/delete.png";
 import editImage from "../../../assets/edit.png";
-import { useDispatch } from "react-redux";
-import { editItem } from "../../../redux/createSafe/createSafe.action";
-
 
 function Card(props) {
   const { safe, handelClick, onDelete, index } = props;
   //console.log(safe.index);
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
-  const dispatch = useDispatch();
 
 
-  const handelEdit = () => {
+  const openEditModel = () => {
     // dispatch(editItem(safe, index))
     setModalIsOpen(true);
     console.log("edit");
@@ -37,7 +33,7 @@ function Card(props) {
       <div className="rightcard">
       <img
           src={editImage}
-          onClick={handelEdit}
+          onClick={openEditModel}
           className="icon"
           alt={"img"}
         ></img>
@@ -51,6 +47,9 @@ function Card(props) {
       {modalIsOpen && (
         <EditModel
           onCancel={closeModalHandler}
+          openEditModel={openEditModel}
+          index = {index}
+          safe = {safe}
         />
       )}
       {modalIsOpen && <Backdrop onClick={closeModalHandler} />}

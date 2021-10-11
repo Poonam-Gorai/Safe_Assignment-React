@@ -1,8 +1,10 @@
 import React from "react";
 import "./RightContainer.css";
+import { useState } from "react";
 import AddFolder from "../modal/AddFolder";
 import RightCard from "./rightCard/rightCard";
 import { useSelector } from "react-redux";
+import Backdrop from "../backdrop/Backdrop";
 
 function RightContainer({
   AddButtonDisable,
@@ -11,8 +13,8 @@ function RightContainer({
   setSelectedSafe,
   currentIndex,
 }) {
-  const [showAddFolder, setshowAddFolder] = React.useState(false);
-  const [name, setName] = React.useState("");
+  const [showAddFolder, setshowAddFolder] = useState(false);
+  const [name, setName] = useState("");
   const safeList = useSelector((state) => state.createSafe.safes);
 
   let secrets;
@@ -21,6 +23,9 @@ function RightContainer({
   }
   else{
   secrets = safeList[currentIndex].secrets;
+  }
+  function closeModalHandler() {
+    setshowAddFolder(false);
   }
   
   const handleSetName = (add) => {
@@ -42,6 +47,7 @@ function RightContainer({
           setshowAddFolder={setshowAddFolder}
         />
       )}
+      {showAddFolder && <Backdrop onClick={closeModalHandler} />}
       <div className="right-container">
         <div className="image-container">
           <div className="safe-Content">
