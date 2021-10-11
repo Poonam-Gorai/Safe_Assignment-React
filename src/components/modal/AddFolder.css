@@ -3,11 +3,11 @@
     background-color: #2a2e3e;
     padding: 3rem;
     text-align: center;
-    width: 35rem;
+    width: 40rem;
     z-index: 10;
     position: fixed;
     top: 35vh;
-    left: calc(45% - 10rem);
+    left: calc(40% - 10rem);
     bottom: 35vh;
   }
   .addFolder-content {
@@ -52,4 +52,9 @@
   .addFolder-btn {
     display: flex;
     justify-content: flex-end;
+  }
+  p{
+    color: #8b8ea6;
+    font-family: Helvetica;
+  font-size: 13px;
   }

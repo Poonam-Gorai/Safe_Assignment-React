@@ -4,47 +4,52 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { EditItem } from "../../redux/createSafe/createSafe.action";
 
-
-const EditModel = ({onCancel, index, safe}) => {
+const EditModel = ({ onCancel, index, safe }) => {
   const dispatch = useDispatch();
+  
   const safeNameInputRef = useRef();
   const ownerInputRef = useRef();
   const typeInputRef = useRef();
   const descriptionInputRef = useRef();
 
+  console.log("editModel", index);
+  console.log(safe);
 
-  const editSafe = (newSafe)=>{
-     dispatch(EditItem(newSafe, index))
-     onCancel()
-  }
+  const editSafe = (newSafe) => {
+    dispatch(EditItem(newSafe, index));
+    onCancel();
+  };
 
-  function submitHandler(event){
-
-    event.preventDefault()
+  function submitHandler(event) {
+    event.preventDefault();
 
     const enteredSafeName = safeNameInputRef.current.value;
     const enteredOwner = ownerInputRef.current.value;
     const enteredType = typeInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
-    
-    if (!enteredSafeName || !enteredOwner || !enteredType || !enteredDescription){
-      return alert("Please fill in all the fileds!")
+
+    if (
+      !enteredSafeName ||
+      !enteredOwner ||
+      !enteredType ||
+      !enteredDescription
+    ) {
+      return alert("Please fill in all the fileds!");
       //return toast.warn("Please fill in all the fileds!");
     }
-    
-    const {secrets} = safe
-    
-    let prevScrets = secrets.length!==0?secrets:[]
+
+    const { secrets } = safe;
+
+    let prevScrets = secrets.length !== 0 ? secrets : [];
     const newSafe = {
       safename: enteredSafeName,
-      owner:  enteredOwner,
+      owner: enteredOwner,
       type: enteredType,
       description: enteredDescription,
-      secrets:prevScrets
+      secrets: prevScrets,
     };
-    editSafe(newSafe)
+    editSafe(newSafe);
   }
-
 
   return (
     <form className="modal">
@@ -58,20 +63,66 @@ const EditModel = ({onCancel, index, safe}) => {
           content of the safe.
         </p>
       </div>
-      <div className='input-content'>
-      <span className='Safename' htmlFor='safename'>Safe Name</span>
-      <input type="text" placeholder="Safe Name" id='safename'className="Safe" ref={safeNameInputRef} autoComplete='off' required></input>
-      <span className='Safename' htmlFor='owner'>Owner</span>
-      <input type="text" placeholder="Owner"id='owner' className="Safe" ref={ownerInputRef} autoComplete='off' required></input>
-      <span className='Safename'htmlFor='type'>Type</span>
-      <input type="text" placeholder="Type" id='type'className="Safe" ref={typeInputRef} autoComplete='off' required></input>
-      <span className='Safename'htmlFor='description'>Description</span>
-      <textarea placeholder="Description"id='description' className="Safe" rows='2' ref={descriptionInputRef} required></textarea>
-      <span className='Safename'>Please add minimum of 10 characters</span>
+      <div className="input-content">
+        <span className="Safename" htmlFor="safename">
+          Safe Name
+        </span>
+        <input
+          type="text"
+          placeholder="Safe Name"
+          id="safename"
+          className="Safe"
+          ref={safeNameInputRef}
+          autoComplete="off"
+          required
+          //value={safe.safename}
+          //onChange={(e) => enteredSafeName(e.target.value)}
+        ></input>
+        <span className="Safename" htmlFor="owner">
+          Owner
+        </span>
+        <input
+          type="text"
+          placeholder="Owner"
+          id="owner"
+          className="Safe"
+          ref={ownerInputRef}
+          autoComplete="off"
+          required
+        ></input>
+        <span className="Safename" htmlFor="type">
+          Type
+        </span>
+        <input
+          type="text"
+          placeholder="Type"
+          id="type"
+          className="Safe"
+          ref={typeInputRef}
+          autoComplete="off"
+          required
+        ></input>
+        <span className="Safename" htmlFor="description">
+          Description
+        </span>
+        <textarea
+          placeholder="Description"
+          id="description"
+          className="Safe"
+          rows="2"
+          ref={descriptionInputRef}
+          required
+        ></textarea>
+        <span className="Safename">Please add minimum of 10 characters</span>
       </div>
       <div className="modal-btn">
-        <button className="modal-btn-cancle" onClick={onCancel} >Cancel</button>
-        <button className="modal-btn-create" onClick={submitHandler}> Save</button>
+        <button className="modal-btn-cancle" onClick={onCancel}>
+          Cancel
+        </button>
+        <button className="modal-btn-create" onClick={submitHandler}>
+          {" "}
+          Save
+        </button>
       </div>
     </form>
   );

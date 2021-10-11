@@ -6,12 +6,12 @@
   background-image: url('../../assets/Banner.png');
   height: 30%;
   background-size: cover;
-  position: relative;
 }
 .safe-Content{
-  position: absolute;
-  top: 1rem;
-  left: 16rem;
+ width: 70%;
+ margin-right: 0px;
+ margin-left: auto;
+ padding: 1.5rem;
 }
 .Sample {
   font-size: 24px;
@@ -39,8 +39,7 @@
   text-decoration: none;
   color: #fff;
   list-style: none;
-  padding: 10px 30px;
-  display: flex;
+  padding: 15px 30px;
 }
 .line {
   height: 3px;
@@ -52,7 +51,7 @@
   margin: 1rem;
 }
 .img-content{
-  position: absolute;
+  
   top: 4rem;
   display: flex;
   flex-direction: column;

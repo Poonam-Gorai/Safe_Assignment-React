@@ -34,6 +34,7 @@ const AddFolder = ({ setshowAddFolder,name,handleSetName,currentIndex }) => {
           value={name}
           onChange={(e) => handleSetName(e.target.value)}
         ></input>
+        <p>Please enter a minimum of 3 characters lowercase alphabets numbers and underscores only</p>
         <div className="addFolder-btn">
           <button className="addFolder-btn-cancle" onClick={closeAddForm}>
             Cancel
