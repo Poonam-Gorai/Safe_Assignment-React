@@ -28,7 +28,7 @@
   padding: 1.45rem .5rem;
   text-align: center;
 }
-.header li:hover,.header li:active
+.header li:hover
  {
     cursor: pointer;
     background-image: linear-gradient(to top, #72134b, #1d212c);
@@ -38,4 +38,7 @@
     width: 100%;
     padding-left: 3rem;
     justify-content: space-between;
+}
+.header .active{
+  background-image: linear-gradient(to top, #72134b, #1d212c);
 }
