@@ -5,12 +5,13 @@ import Card from "./card";
 import {deleteItem} from '../../../redux/createSafe/createSafe.action';
 
 
-function CreateNewSafe({ setSelectedSafe, setcurrentIndex,setAddButtonDisable}) {
+function CreateNewSafe({ setSelectedSafe, setcurrentIndex,setAddButtonDisable,setsafeListLength}) {
   const safeList = useSelector((state) => state.createSafe.safes);
   
   console.log(safeList);
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
+  setsafeListLength(safeList);
   const handelClick = (safe, index) => {
     setcurrentIndex(index)
     setSelectedSafe(safe);

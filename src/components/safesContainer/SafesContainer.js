@@ -1,14 +1,16 @@
 import React from "react";
 import LeftContainer from "../leftContainer/LeftContainer";
 import RightContainer from "../rightContainer/RightContainer";
-import "./SalesContainer.css";
+import "./SafesContainer.css";
 import { useState } from "react";
 
 
-function SalesContainer() {
+function SafesContainer( ) {
   const [AddButtonDisable, setAddButtonDisable] = useState(true);
   const [selectedSafe, setSelectedSafe] = useState({});
   const [currentIndex, setcurrentIndex] = useState(0)
+  const[safeListName,setSafeListName] = useState({});
+  console.log(safeListName);
 
   // const safeList = useSelector((state) => state.createSafe.safes);
   // console.log("StfeList",safeList[0].secrets);
@@ -20,6 +22,7 @@ function SalesContainer() {
           setAddButtonDisable={setAddButtonDisable}
           setSelectedSafe={setSelectedSafe}
           setcurrentIndex={setcurrentIndex}
+          setSafeListName={setSafeListName}
         />
         <RightContainer
           AddButtonDisable={AddButtonDisable}
@@ -27,10 +30,12 @@ function SalesContainer() {
           selectedSafe={selectedSafe}
           setSelectedSafe={setSelectedSafe}
           currentIndex={currentIndex}
+          safeListName={safeListName}
+          
         />
       </div>
     </div>
   );
 }
 
-export default SalesContainer;
+export default SafesContainer;

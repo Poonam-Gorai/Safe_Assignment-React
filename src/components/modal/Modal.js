@@ -1,7 +1,7 @@
 import { useRef } from "react";//for reading the user input using reference
 import "./Modal.css";
 
-import {toast} from "react-toastify";
+
 import { useDispatch } from 'react-redux';
 import {createSafe} from '../../redux/createSafe/createSafe.action';
 
@@ -69,7 +69,7 @@ function Modal(props) {
       <span className='Safename'htmlFor='type'>Type</span>
       <input type="text" placeholder="Type" id='type'className="Safe" ref={typeInputRef} autoComplete='off' required></input>
       <span className='Safename'htmlFor='description'>Description</span>
-      <textarea placeholder="Description"id='description' className="Safe" rows='2' ref={descriptionInputRef} required></textarea>
+      <textarea placeholder="Description"id='description' className="Safe" rows='3' ref={descriptionInputRef} required></textarea>
       <span className='Safename'>Please add minimum of 10 characters</span>
       </div>
       <div className='modal-btn'>

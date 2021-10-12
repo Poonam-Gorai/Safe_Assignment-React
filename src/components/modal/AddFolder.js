@@ -23,14 +23,15 @@ const AddFolder = ({ setshowAddFolder,name,handleSetName,currentIndex }) => {
   return (
     <div className="addFolder">
       <div className="addFolder-content">
-        <span className="Safename" htmlFor="safename">
+        <span className="addFolder-Safename" htmlFor="safename">
           Add Folder
         </span>
+        <p className='folder-name'>Folder Name</p>
         <input
           type="text"
           placeholder=""
           id="safename"
-          className="Safe"
+          className="addFolder-Safe"
           value={name}
           onChange={(e) => handleSetName(e.target.value)}
         ></input>

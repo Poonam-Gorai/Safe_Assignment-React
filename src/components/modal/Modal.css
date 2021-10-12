@@ -3,12 +3,12 @@
   background-color: #2a2e3e;
   padding: 3rem;
   text-align: center;
-  width: 50rem;
+  width: 40rem;
   z-index: 10;
   position: fixed;
-  top: 10vh;
-  left: calc(35% - 10rem);
-  bottom: 10vh;
+  top: 8vh;
+  left: calc(40% - 10rem);
+  bottom: 8vh;
 }
 .create {
   font-weight: bold;
@@ -50,7 +50,7 @@
 .modal-btn-cancle {
   color: deeppink;
   align-items: center;
-  margin: 1rem;
+  margin: 1rem .25rem;
   padding: 0.5rem 1.5rem;
   background-color: white;
   border: none;
@@ -61,7 +61,7 @@
 .modal-btn-create {
   color: white;
   align-items: center;
-  margin: 1rem;
+  margin: 1rem .25rem;
   padding: 0.5rem 1.5rem;
   background-color: deeppink;
   border: none;

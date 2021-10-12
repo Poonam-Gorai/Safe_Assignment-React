@@ -6,21 +6,21 @@
     width: 40rem;
     z-index: 10;
     position: fixed;
-    top: 35vh;
+    top: 27vh;
     left: calc(40% - 10rem);
-    bottom: 35vh;
+    bottom: 27vh;
   }
   .addFolder-content {
     display: flex;
     flex-direction: column;
   }
-  .Safename {
+  .addFolder-Safename {
     text-align: left;
-    font-size: 13px;
+    font-size: 16px;
     color: white;
-    margin: 0.5rem 0 0 0.5rem;
+    margin: 0.5rem 0 2rem 0.5rem;
   }
-  .Safe {
+  .addFolder-Safe {
     margin: 0.5rem;
     padding: 0.5rem;
     border: none;
@@ -30,7 +30,7 @@
   .addFolder-btn-cancle {
     color: deeppink;
     align-items: center;
-    margin: 1rem;
+    margin: 3rem .5rem;
     padding: 0.5rem 1.5rem;
     background-color: white;
     border: none;
@@ -41,7 +41,7 @@
   .addFolder-btn-create {
     color: white;
     align-items: center;
-    margin: 1rem;
+    margin: 3rem .5rem;
     padding: 0.5rem 1.5rem;
     background-color: deeppink;
     border: none;
@@ -56,5 +56,10 @@
   p{
     color: #8b8ea6;
     font-family: Helvetica;
-  font-size: 13px;
+    font-size: 13px;
+
+  }
+  .folder-name{
+    text-align: left;
+    margin-left: 8px;
   }
