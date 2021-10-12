@@ -1,6 +1,7 @@
 .card{
     display: flex;
     align-items: center;
+    cursor: pointer;
     border-bottom: #2a2e3e solid 1px;
     justify-content: space-between;
     }
@@ -12,6 +13,7 @@
   }
 .rightcard{
   display: flex;
+  margin: 1rem;
   align-items: center;
 }
 .img-cont{
@@ -20,4 +22,10 @@
 }
 .icon{
   cursor: pointer;
+}
+.img-icon{
+height:2.5rem;
+width: 2.3rem;
+margin: 1rem;
+cursor: pointer;
 }

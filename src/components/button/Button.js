@@ -1,12 +1,16 @@
 import { useState } from "react";
-import Backdrop from '../backdrop/Backdrop';
-import Modal from '../modal/Modal';
+import Backdrop from "../backdrop/Backdrop";
+import Modal from "../modal/Modal";
 import "./Button.css";
+import { useSelector } from "react-redux";
 
-function Button() {
-  
+function Button({ }) {
+  const safeList = useSelector((state) => state.createSafe.safes);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
+  //console.log(safeListLength);
+console.log(safeList);
+  //const [safeLength, setsafeLength] = useState({});
+  
   function ModalHandler() {
     setModalIsOpen(true);
 
@@ -16,20 +20,27 @@ function Button() {
     setModalIsOpen(false);
   }
 
-
   return (
-    <div className='btn-size'>
-      
-      <button className="btn" onClick={ModalHandler}>
-        <span className="plus">+</span>
-      </button>
-      {modalIsOpen && (
-        <Modal
-          onCancel={closeModalHandler}
-        />
+    <>
+      {safeList.length === 0 && ( 
+        <div className="btn-size">
+          <button className="btn" onClick={ModalHandler}>
+            <span className="plus">+</span>
+          </button>
+          {modalIsOpen && <Modal onCancel={closeModalHandler} />}
+          {modalIsOpen && <Backdrop onClick={closeModalHandler} />}
+        </div>
       )}
-      {modalIsOpen && <Backdrop onClick={closeModalHandler} />}
-    </div>
+       {safeList.length !== 0 && ( 
+        <div className="btn-size-2">
+          <button className="btn" onClick={ModalHandler}>
+            <span className="plus">+</span>
+          </button>
+          {modalIsOpen && <Modal onCancel={closeModalHandler} />}
+          {modalIsOpen && <Backdrop onClick={closeModalHandler} />}
+        </div>
+       )}
+    </>
   );
 }
 

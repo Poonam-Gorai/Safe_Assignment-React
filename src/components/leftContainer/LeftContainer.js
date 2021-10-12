@@ -15,14 +15,19 @@ function LeftContainer({
 }) {
   const [safeListLength, setsafeListLength] = useState({});
   setSafeListName(safeListLength);
+
+  // const [safeLength, setsafeLength] = useState({});
+  // setSafeListName(safeLength);
+  // //console.log(safeLength);
+
   console.log(safeListLength);
   return (
     <div className="left-img-content">
+      <header className="left-container-header">
+        <span className="allsafe">All Safes ({safeListLength.length})</span>
+        <Search />
+      </header>
       <div className="left-container">
-        <header className="left-container-header">
-          <span className="allsafe">All Safes ({safeListLength.length})</span>
-          <Search />
-        </header>
         <div className="safelist">
           <CreateNewSafe
             setAddButtonDisable={setAddButtonDisable}
@@ -31,14 +36,20 @@ function LeftContainer({
             setsafeListLength={setsafeListLength}
           />
         </div>
-        {safeListLength.length === 0 && 
-        <img src={Group} className="Group" />}
+        {safeListLength.length === 0 && (
+          <>
+            <img src={Group} className="Group" />
+            <Button />
+          </>
+        )}
 
         {safeListLength.length !== 0 && (
-          <img src={Group} className="Group_none" />
+          <>
+            <img src={Group} className="Group_none" />
+            <Button  />
+          </>
         )}
       </div>
-      <Button />
     </div>
   );
 }

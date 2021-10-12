@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 import logo from '../../assets/logo.svg';
-import{MenuList} from './MenuList'
+import{MenuList} from './MenuList';
 
 function MainNavigation() {
 
+  const location = useLocation();
+  console.log(location.pathname)
   const menuList = MenuList.map(({url,title},index) =>{
 
     return(

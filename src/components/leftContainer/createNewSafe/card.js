@@ -27,7 +27,7 @@ function Card(props) {
       }}
     >
       <div className="img-cont">
-        <img src="../../../assets/icon.png"alt={"img"} className="icon"></img>
+        <img src="../../../assets/icon.png"alt={"img"} className="img-icon"></img>
         <span className="card-details">{safe.safename}</span>
       </div>
       <div className="rightcard">

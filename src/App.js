@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route,} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route,Redirect} from "react-router-dom";
 import React from "react";
 import Safes from './pages/Safes/Safes';
 import IAMServiceAccounts from './pages/iamServiceaccounts/IAMServiceAccounts';
@@ -14,6 +14,13 @@ function App() {
       <Router>
       <MainNavigation />
       <Switch>
+      <Route
+            exact
+            path="/tvault"
+            render={() => {
+              return <Redirect to="/safes" />;
+            }}
+          />
       <Route path="/safes" exact component={Safes} />
       <Route path="/azure" exact component={Azure} />
       <Route path="/iamsvc" exact component={IAMServiceAccounts}/>

@@ -12,6 +12,7 @@ function CreateNewSafe({ setSelectedSafe, setcurrentIndex,setAddButtonDisable,se
 
   const dispatch = useDispatch();
   setsafeListLength(safeList);
+  
   const handelClick = (safe, index) => {
     setcurrentIndex(index)
     setSelectedSafe(safe);

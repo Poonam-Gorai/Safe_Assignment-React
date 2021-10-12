@@ -4,19 +4,19 @@ export const MenuList = [
     url: "/safes",
   },
   {
-    title: "VaultAppsRoles",
+    title: "Vault Apps Roles",
     url: "/vault",
   },
   {
-    title: "ServiceAccounts",
+    title: "Service Accounts",
     url: "/svcaccount",
   },
   {
-    title: "IAMServiceAccounts",
+    title: "IAM Service Accounts",
     url: "/iamsvc",
   },
   {
-    title: "AzureActiveDirectory",
+    title: "Azure Active Directory",
     url: "/azure",
   },
 ];
