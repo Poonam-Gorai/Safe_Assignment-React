@@ -6,6 +6,7 @@ export const MenuList = [
   {
     title: "Vault Apps Roles",
     url: "/vault",
+    test:"this is VaultAppsRoles"
   },
   {
     title: "Service Accounts",

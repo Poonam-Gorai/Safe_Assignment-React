@@ -6,6 +6,7 @@
 .image-container{
   background-image: url('../../assets/Banner.png');
   height: 30%;
+  width: 100%;
   background-size: cover;
   position:absolute;
   top: -10px;
@@ -100,4 +101,8 @@ background-image: linear-gradient(to top, #72134b, #1d212c);
   }
   .img-content-none{
     display: none;
+  }
+  .safe-Content2{
+    margin-left: 11rem;
+    padding: 2.5rem 5rem;
   }

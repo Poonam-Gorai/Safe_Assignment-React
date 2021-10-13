@@ -1,7 +1,16 @@
 import "./Search.css";
+import React from "react";
 
-function Search() {
-    return <input type="text" placeholder="&nbsp;Search.." className="search"></input>;
-  }
-  
-  export default Search;
+function Search({searchQuery,onQuery}) {
+  return (
+    <input type="text" 
+    placeholder="&nbsp;Search.."
+    value={searchQuery}
+     className="search"
+     onChange={(e) => onQuery(e.currentTarget.value)}
+     >
+     </input>
+  );
+}
+
+export default Search;

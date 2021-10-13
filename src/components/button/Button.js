@@ -4,7 +4,7 @@ import Modal from "../modal/Modal";
 import "./Button.css";
 import { useSelector } from "react-redux";
 
-function Button({ }) {
+function Button() {
   const safeList = useSelector((state) => state.createSafe.safes);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   //console.log(safeListLength);

@@ -15,9 +15,16 @@ const AddFolder = ({ setshowAddFolder,name,handleSetName,currentIndex }) => {
   };
   const saveForm = () => {
     console.log("str",name);
+    
+    if (!name) {
+      return alert("Please fill in all the fileds!");
+      //return toast.warn("Please fill in all the fileds!");
+    }
     setshowAddFolder((prev) => !prev);
     secrets.push(name)
     handleSetName(" ");
+
+    
   };
 
   return (
@@ -33,6 +40,7 @@ const AddFolder = ({ setshowAddFolder,name,handleSetName,currentIndex }) => {
           id="safename"
           className="addFolder-Safe"
           value={name}
+          required
           onChange={(e) => handleSetName(e.target.value)}
         ></input>
         <p>Please enter a minimum of 3 characters lowercase alphabets numbers and underscores only</p>

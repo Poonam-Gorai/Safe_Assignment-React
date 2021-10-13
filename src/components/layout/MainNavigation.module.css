@@ -39,6 +39,6 @@
     padding-left: 3rem;
     justify-content: space-between;
 }
-.header .active{
+.active{
   background-image: linear-gradient(to top, #72134b, #1d212c);
 }

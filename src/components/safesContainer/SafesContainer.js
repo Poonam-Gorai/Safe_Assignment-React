@@ -14,7 +14,6 @@ function SafesContainer( ) {
 
   // const safeList = useSelector((state) => state.createSafe.safes);
   // console.log("StfeList",safeList[0].secrets);
-
   return (
     <div className="main-content">
       <div className="container">

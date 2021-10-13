@@ -8,12 +8,12 @@ function MainNavigation() {
   const location = useLocation();
   console.log(location.pathname)
 
-  const menuList = MenuList.map(({url,title},index) =>{
+  const menuList = MenuList.map(({url,title,test},index) =>{
     console.log(url)
     console.log(location.pathname === url);
     return(
-    <li key={index} className={location.pathname === url ? "active" : " "}>
-      <Link to={url}>{title}</Link>
+    <li key={index} className={location.pathname === url ? `${classes.active}` : " "}>
+      <Link to={`${url}?name=${test}&age=10`}>{title}</Link>
     </li>)
   })
 

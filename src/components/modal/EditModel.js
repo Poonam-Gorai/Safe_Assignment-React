@@ -55,7 +55,7 @@ const EditModel = ({ onCancel, index, safe }) => {
     <form className="modal">
       <p className="create">Edit Safe</p>
       <div className="modal-img">
-        <img src="./assets/icon.png" className="icon"></img>
+        <img src="./assets/icon.png" className="icon" alt='iconimg'></img>
         <p className="model-content">
           A Safe is a logical unit to store the secrets. All the safes are
           created within Vault. You can control access only at the safe level.
@@ -75,7 +75,7 @@ const EditModel = ({ onCancel, index, safe }) => {
           ref={safeNameInputRef}
           autoComplete="off"
           required
-          //value={safe.safename}
+          defaultValue={safe.safename}
           //onChange={(e) => enteredSafeName(e.target.value)}
         ></input>
         <span className="Safename" htmlFor="owner">
@@ -89,6 +89,7 @@ const EditModel = ({ onCancel, index, safe }) => {
           ref={ownerInputRef}
           autoComplete="off"
           required
+          defaultValue={safe.owner}
         ></input>
         <span className="Safename" htmlFor="type">
           Type
@@ -101,6 +102,7 @@ const EditModel = ({ onCancel, index, safe }) => {
           ref={typeInputRef}
           autoComplete="off"
           required
+          defaultValue={safe.type}
         ></input>
         <span className="Safename" htmlFor="description">
           Description
@@ -109,9 +111,10 @@ const EditModel = ({ onCancel, index, safe }) => {
           placeholder="Description"
           id="description"
           className="Safe"
-          rows="2"
+          rows="3"
           ref={descriptionInputRef}
           required
+          defaultValue={safe.description}
         ></textarea>
         <span className="Safename">Please add minimum of 10 characters</span>
       </div>

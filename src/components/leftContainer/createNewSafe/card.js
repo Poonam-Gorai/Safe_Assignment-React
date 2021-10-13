@@ -19,6 +19,7 @@ function Card(props) {
   function closeModalHandler() {
     setModalIsOpen(false);
   }
+  console.log(handelClick.index)
   return (
     <div
       className="card "

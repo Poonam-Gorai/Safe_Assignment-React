@@ -53,7 +53,7 @@ function Modal(props) {
     <form className="modal" >
       <p className="create">Create Safe</p>
       <div className="modal-img">
-        <img src="./assets/icon.png" className="icon"></img>
+        <img src="./assets/icon.png" className="icon"alt='iconimg'></img>
         <p className="model-content">
           A Safe is a logical unit to store the secrets. All the safes are
           created within Vault. You can control access only at the safe level.

@@ -6,7 +6,7 @@ function RightCard(props){
 
     return(
         <div className='right-card'>
-            <img src={folder} className='folder'></img>
+            <img src={folder} className='folder' alt='folderimg'></img>
             <span className='right-card-details'>{props.name}</span>
         </div>
     )
