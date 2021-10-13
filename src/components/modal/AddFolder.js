@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const AddFolder = ({ setshowAddFolder,name,handleSetName,currentIndex }) => {
 
   const safeList = useSelector((state) => state.createSafe.safes);
-  const secrets = safeList[currentIndex].secrets;
+  const secrets = safeList[currentIndex]?.secrets;
   //console.log("StfeList",safeList[0].secrets);
 
 

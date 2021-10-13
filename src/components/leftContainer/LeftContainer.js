@@ -6,7 +6,7 @@ import "../search/Search.css";
 
 import CreateNewSafe from "./createNewSafe/CreateNewSafe";
 import { useSelector } from "react-redux";
-import { useState,useRef } from "react";
+import { useState,useRef,useEffect } from "react";
 
 function LeftContainer({
   setAddButtonDisable,
@@ -17,29 +17,31 @@ function LeftContainer({
   const safeList = useSelector((state) => state.createSafe.safes);
   const [searchTerm, setSearchTerm] = useState("");
   const inputRef = useRef("");
-  const [newSafeList, setNewSafeList] = useState([]);
+  const [safeData, setSafeData] = useState([]);
   const [safeListLength, setsafeListLength] = useState({});
   setSafeListName(safeListLength);
 
-  const safeSearch = safeList;
-  console.log(safeSearch);
   
   // const [safeLength, setsafeLength] = useState({});
   // setSafeListName(safeLength);
   // //console.log(safeLength);
+  useEffect(() => {
+    setSafeData([...safeList])
+  }, [safeList]);
+  
 
   const filterSafe = () => {
     const searchText = inputRef?.current.value;
     console.log(searchText)
     setSearchTerm(searchText);
     if (searchText !== "") {
-      const newAllSafes = safeSearch.filter((item) => {
+      const newAllSafes = safeData.filter((item) => {
         return item.safename.toLowerCase().includes(searchText.toLowerCase());
       });
-      setNewSafeList(newAllSafes);
-      console.log(newAllSafes)
+      setSafeData(newAllSafes);
+      //console.log(newAllSafes)
     } else {
-      return safeSearch;
+      setSafeData([...safeList]);
     }
   }
 
@@ -64,6 +66,7 @@ function LeftContainer({
             setSelectedSafe={setSelectedSafe}
             setcurrentIndex={setcurrentIndex}
             setsafeListLength={setsafeListLength}
+            safeData={safeData}
           />
         </div>
         {safeListLength.length === 0 && (
