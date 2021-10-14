@@ -11,6 +11,14 @@
   .card-details{
     color: ghostwhite;
   }
+  .details{
+    color: white;
+    font-size: 10px;
+  }
+  .card-det{
+    display: flex;
+    flex-direction: column;
+  }
 .rightcard{
   display: flex;
   margin: 1rem;

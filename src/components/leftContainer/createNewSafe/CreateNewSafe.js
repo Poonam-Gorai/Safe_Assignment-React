@@ -1,5 +1,5 @@
 
-import { useSelector,useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 import React from "react";
 import Card from "./card";
 import {deleteItem} from '../../../redux/createSafe/createSafe.action';
